@@ -82,8 +82,4 @@ map.pm.Toolbar.createCustomControl({
 var drawnItems = new L.FeatureGroup();
 map.addLayer(drawnItems);
 
-
-
-
 var geojson = L.geoJson(myGeoJson, {}).addTo(drawnItems);
-
