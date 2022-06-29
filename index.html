@@ -1,106 +1,108 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geoman - example</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css" />  
-    
+    <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css" />
+
     <!-- CDN CSS -->
     <link rel="stylesheet" href="https://cdn.unkuna.org/v0.9.0/css/unkuna.css">
     <link rel="stylesheet" href="https://cdn.unkuna.org/v0.9.0/theme/unkuna-theme.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
     <h3 class="nkn-text-center">Architecture plane</h3>
     <div class="nkn-row nkn-border nkn-m-small">
         <div class="nkn-col-s12">
-             <!-- div map -->
+            <!-- div map -->
             <div id="map" style="height: 400px;"></div>
         </div>
     </div>
 
 
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script> 
-    <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>  
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
+    <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
     <script>
 
-var myGeoJson = {
-   "type":"FeatureCollection",
-   "features":[
-       {
-           "type":"Feature",
-           "geometry":{
-               "type":"LineString",
-               "coordinates":[
-                   [-93.825,-32.14287395],
-                   [-88.425,-27.65861979],
-                   [-82.575,-32.52310201],
-                   [-98.55,-45.08903556],
-                   [-110.475,-35.87195906],
-                   [-116.55,-39.95286955],
-                   [-122.625,-35.68942551],
-                   [-112.48014706,-27.28872711],
-                   [-100.35,-37.31705287],
-                   [-93.825,-32.14287395]
-               ]
-           },
-           "id":"7ef56a8a-1d0d-4bb8-80f0-0f6fe129a32f",
-           "properties":{"name":"Livingroom"}
-       },
-       {
-           "type":"Feature",
-           "geometry":{
-               "type":"LineString",
-               "coordinates":[
-                   [-116.55,-39.95286955],
-                   [-103.05,-48.47699995],
-                   [-98.55,-45.08903556],
-                   [-110.475,-35.87195906],
-                   [-116.55,-39.95286955]
-               ]
-           },
-           "id":"cbc5f7d6-911c-4d3d-96be-375d75d2156b",
-           "properties":{"name":"Maday's room"}
-       },
-       {
-           "type":"Feature",
-           "geometry":{
-               "type":"LineString",
-               "coordinates":[
-                   [-123.975,-7.40430457],
-                   [-134.55,-18.35285714],
-                   [-123.075,-27.45914939],
-                   [-128.25,-31.95216224],
-                   [-122.625,-35.68942551],
-                   [-106.2,-21.73419274],
-                   [-113.72701166,-15.6126139],
-                   [-123.75,-7.18112483]
-               ]
-           },
-           "id":"d3ac16e3-f43e-462b-87b7-17002a86c9f5",
-           "properties":{"name":"Master bedroom"}
-       },
-       {
-           "type":"Feature",
-           "geometry":{
-               "type":"LineString",
-               "coordinates":[
-                   [-106.2,-21.73419274],
-                   [-101.22192445,-26.03625324],
-                   [-93.825,-32.14287395],
-                   [-100.35,-37.31705287],
-                   [-112.48014706,-27.28872711],
-                   [-106.2,-21.73419274]
-               ]
-           },
-           "id":"bc444aa9-c227-4c92-ad50-da358813f7c1",
-           "properties":{"name":"Bathroom"}
-       }
-   ]
-};
+        var myGeoJson = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                            [-93.825, -32.14287395],
+                            [-88.425, -27.65861979],
+                            [-82.575, -32.52310201],
+                            [-98.55, -45.08903556],
+                            [-110.475, -35.87195906],
+                            [-116.55, -39.95286955],
+                            [-122.625, -35.68942551],
+                            [-112.48014706, -27.28872711],
+                            [-100.35, -37.31705287],
+                            [-93.825, -32.14287395]
+                        ]
+                    },
+                    "id": "7ef56a8a-1d0d-4bb8-80f0-0f6fe129a32f",
+                    "properties": { "name": "Livingroom" }
+                },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                            [-116.55, -39.95286955],
+                            [-103.05, -48.47699995],
+                            [-98.55, -45.08903556],
+                            [-110.475, -35.87195906],
+                            [-116.55, -39.95286955]
+                        ]
+                    },
+                    "id": "cbc5f7d6-911c-4d3d-96be-375d75d2156b",
+                    "properties": { "name": "Maday's room" }
+                },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                            [-123.975, -7.40430457],
+                            [-134.55, -18.35285714],
+                            [-123.075, -27.45914939],
+                            [-128.25, -31.95216224],
+                            [-122.625, -35.68942551],
+                            [-106.2, -21.73419274],
+                            [-113.72701166, -15.6126139],
+                            [-123.75, -7.18112483]
+                        ]
+                    },
+                    "id": "d3ac16e3-f43e-462b-87b7-17002a86c9f5",
+                    "properties": { "name": "Master bedroom" }
+                },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                            [-106.2, -21.73419274],
+                            [-101.22192445, -26.03625324],
+                            [-93.825, -32.14287395],
+                            [-100.35, -37.31705287],
+                            [-112.48014706, -27.28872711],
+                            [-106.2, -21.73419274]
+                        ]
+                    },
+                    "id": "bc444aa9-c227-4c92-ad50-da358813f7c1",
+                    "properties": { "name": "Bathroom" }
+                }
+            ]
+        };
 
 
 
@@ -111,4 +113,5 @@ var myGeoJson = {
     <!-- CDN JS -->
     <script src="https://cdn.unkuna.org/v0.9.0/javascript/unkuna.js"></script>
 </body>
+
 </html>
